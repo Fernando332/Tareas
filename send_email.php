@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dueDate = $_POST['dueDate'];
     $message = "Tarea: $task\nFecha de vencimiento: $dueDate";
 
-    $headers = "From: franquezfloresf@gmail.com";
+    $headers = "From: fernandodanielfranquezflores@gmail.com";
 
     if (mail($to, $subject, $message, $headers)) {
         echo "Correo electrónico enviado correctamente.";
