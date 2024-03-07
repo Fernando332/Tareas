@@ -1,12 +1,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "destinatario@example.com";
+    $to = "fernandodanielfranquezflores@gmail.com";
     $subject = "Tarea pendiente";
     $task = $_POST['task'];
     $dueDate = $_POST['dueDate'];
     $message = "Tarea: $task\nFecha de vencimiento: $dueDate";
 
-    $headers = "From: remitente@example.com";
+    $headers = "From: franquezfloresf@gmail.com";
 
     if (mail($to, $subject, $message, $headers)) {
         echo "Correo electrónico enviado correctamente.";
