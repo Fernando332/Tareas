@@ -1,19 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('taskForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const task = document.getElementById('task').value;
-        const dueDate = document.getElementById('dueDate').value;
-        
-        // Aquí puedes enviar los datos al servidor para guardar la tarea y la fecha de vencimiento
-        // Por ejemplo, utilizando fetch() o XMLHttpRequest
-        
-        // Luego, puedes mostrar un mensaje de éxito o error
-        const messageContainer = document.getElementById('message');
-        messageContainer.textContent = "Enviando tarea...";
+function sendVerificationCode(email) {
+    // Simular envío de correo electrónico con código de verificación
+    const verificationCode = generateVerificationCode();
+    alert("Código de verificación enviado a su correo electrónico: " + verificationCode);
 
-        // Simular envío exitoso después de 2 segundos
-        setTimeout(function() {
-            messageContainer.textContent = "Tarea enviada correctamente.";
-        }, 2000);
-    });
+    // Mostrar el contenedor del código de verificación
+    document.getElementById('verificationCodeContainer').style.display = 'block';
+}
+
+function generateVerificationCode() {
+    // Generar un código de verificación de 6 dígitos aleatorio
+    return Math.floor(100000 + Math.random() * 900000);
+}
+
+function verifyCode() {
+    const verificationCode = document.getElementById('verificationCode').value;
+    // Verificar el código ingresado aquí
+
+    // Simular verificación exitosa
+    document.getElementById('registrationForm').reset();
+    document.getElementById('verificationCodeContainer').style.display = 'none';
+    document.getElementById('verificationSuccessMessage').style.display = 'block';
+}
+  
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Aquí podrías enviar los datos del formulario al servidor para verificar y crear la cuenta
+    // Luego, llamar a la función sendVerificationCode(email) para enviar el código de verificación
+    sendVerificationCode(email);
 });
