@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Enviar correo electrónico de verificación
     $subject = "Verificación de correo electrónico";
     $message = "Tu código de verificación es: " . $verificationCode;
-    $headers = "From: tu_correo@example.com";
+    $headers = "From: fernandodanielfranquezflores@gmail.com";
 
     if (mail($email, $subject, $message, $headers)) {
         // Correo electrónico enviado correctamente, ahora puedes almacenar el código de verificación en la base de datos
