@@ -8,9 +8,8 @@ require 'PHPMailer/src/SMTP.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Procesar el formulario de registro
     $email = $_POST['email'];
-    $password = $_POST['password'];
 
-    // Validar el correo electrónico y la contraseña (puedes agregar más validaciones aquí)
+    // Validar el correo electrónico (puedes agregar más validaciones aquí)
 
     // Generar el código de verificación
     $verificationCode = generateVerificationCode();
@@ -25,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->setFrom('fernandodanielfranquezflores@outlook.com', 'daniel');
+    $mail->setFrom('fernandodanielfranquezflores29@outlook.com', 'Daniel');
     $mail->addAddress($email);
     $mail->Subject = 'Verificación de correo electrónico';
     $mail->Body = 'Tu código de verificación es: ' . $verificationCode;
