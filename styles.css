@@ -4,13 +4,17 @@ body {
     padding: 20px;
 }
 
-h1 {
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h2 {
     text-align: center;
 }
 
 form {
-    max-width: 400px;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
 label {
